@@ -1,48 +1,48 @@
-// import React from "react"
-// import "./style.css"
+import React from "react";
+import "./style.css";
 
-// const Wrapper = () => {
-//   const data = [
-//     {
-//       cover: <i class='fa-solid fa-truck-fast'></i>,
-//       title: "Worldwide Delivery",
-//       decs: "We offer competitive prices on our 100 million plus product any range.",
-//     },
-//     {
-//       cover: <i class='fa-solid fa-id-card'></i>,
-//       title: "Safe Payment",
-//       decs: "We offer competitive prices on our 100 million plus product any range.",
-//     },
-//     {
-//       cover: <i class='fa-solid fa-shield'></i>,
-//       title: "Shop With Confidence ",
-//       decs: "We offer competitive prices on our 100 million plus product any range.",
-//     },
-//     {
-//       cover: <i class='fa-solid fa-headset'></i>,
-//       title: "24/7 Support ",
-//       decs: "We offer competitive prices on our 100 million plus product any range.",
-//     },
-//   ]
-//   return (
-//     <>
-//       <section className='wrapper background'>
-//         <div className='container grid2'>
-//           {data.map((val, index) => {
-//             return (
-//               <div className='product' key={index}>
-//                 <div className='img icon-circle'>
-//                   <i>{val.cover}</i>
-//                 </div>
-//                 <h3>{val.title}</h3>
-//                 <p>{val.decs}</p>
-//               </div>
-//             )
-//           })}
-//         </div>
-//       </section>
-//     </>
-//   )
-// }
+const Wrapper = () => {
+  const data = [
+    {
+      cover: <i class="fa-solid fa-truck-fast"></i>,
+      title: "Giao hàng trên toàn Thế giới",
+      decs: "Chúng tôi cung cấp giá cả cạnh tranh trên 100 triệu của chúng tôi cộng với sản phẩm bất kỳ phạm vi.",
+    },
+    {
+      cover: <i class="fa-solid fa-id-card"></i>,
+      title: "Thanh toán an toàn và nhanh chóng",
+      decs: "Tích hợp tất cả các ví điện tử thẻ ngân hàng trên toàn Thế giới",
+    },
+    {
+      cover: <i class="fa-solid fa-shield"></i>,
+      title: "Tự tin mua sắm ",
+      decs: "Chúng tôi cung cấp giá cả cạnh tranh trên 100 triệu của chúng tôi cộng với sản phẩm bất kỳ phạm vi.",
+    },
+    {
+      cover: <i class="fa-solid fa-headset"></i>,
+      title: "Hổ trợ 24//7 ",
+      decs: "Đội ngủ nhân viên thúc trực, sẵn sàng tư vấn cho tất cả mọi người",
+    },
+  ];
+  return (
+    <>
+      <section className="wrapper background">
+        <div className="container grid2">
+          {data.map((val, index) => {
+            return (
+              <div className="product" key={index}>
+                <div className="img icon-circle">
+                  <i>{val.cover}</i>
+                </div>
+                <h3>{val.title}</h3>
+                <p>{val.decs}</p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    </>
+  );
+};
 
-// export default Wrapper
+export default Wrapper;
