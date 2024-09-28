@@ -1,0 +1,66 @@
+.Discount {
+  padding: 50px 0; /* Add padding for better spacing */
+}
+
+.Discount .container {
+  width: 85%; /* Control the width of the container */
+  margin: auto; /* Center the container */
+}
+
+.Discount .heading img {
+  width: 40px;
+  height: 40px;
+  margin-top: 5px;
+}
+
+.Discount h2 {
+  font-weight: 600; /* Adjust heading weight */
+}
+
+.Discount h4 {
+  font-weight: 400;
+  margin: 10px 0; /* Add margin for spacing */
+}
+
+.Discount span {
+  color: #e94560;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Dcard specific styling */
+.Dcard .box {
+  text-align: center; /* Center align text in each box */
+}
+
+.Dcard .box img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Responsive Adjustments for the Dcard component */
+@media (max-width: 1200px) {
+  .Discount h2 {
+    font-size: 24px; /* Adjust heading size for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .Dcard .box {
+    flex: 1 1 calc(50% - 20px); /* Two items per row on small screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .Dcard .box {
+    flex: 1 1 100%; /* Full width on very small screens */
+  }
+
+  .Discount h2 {
+    font-size: 20px; /* Further reduce heading size */
+  }
+
+  .Discount span {
+    font-size: 14px; /* Adjust price font size */
+  }
+}

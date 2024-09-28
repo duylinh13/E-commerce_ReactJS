@@ -1,4 +1,191 @@
+/* Flash Deals Section */
 .flash {
   background: #f6f9fc;
   padding: 50px 0;
+}
+
+.container {
+  width: 90%; /* Adjusted for better responsiveness */
+  max-width: 1200px; /* Limit max width on larger screens */
+  margin: auto;
+}
+
+/* Heading Styles */
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  margin-bottom: 30px;
+}
+
+.heading h1 {
+  font-size: 36px;
+  margin-left: 10px;
+}
+
+.heading i {
+  font-size: 24px;
+  color: #0f3460;
+}
+
+/* Flash Card Styles */
+.box {
+  padding: 10px;
+}
+
+.product {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  margin: 10px; /* Add margin for spacing */
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.img {
+  position: relative;
+  width: 100%; /* Ensure images are responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff3d00;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.product-like {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.product-details {
+  padding: 15px;
+}
+
+.product-details h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.rate {
+  color: #ff3d00;
+  margin-bottom: 10px;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price h4 {
+  font-size: 20px;
+  color: #333;
+}
+
+.price button {
+  background: #0f3460;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.price button:hover {
+  background: #73caed;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .heading h1 {
+    font-size: 32px;
+  }
+
+  .product {
+    max-width: 100%; /* Ensure full width on smaller screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .heading h1 {
+    font-size: 28px;
+    text-align: left;
+  }
+
+  .product {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .price button {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading h1 {
+    font-size: 24px;
+  }
+
+  .product {
+    margin: 0 auto;
+  }
+
+  .img {
+    width: 100%;
+    height: auto;
+  }
+
+  .price h4 {
+    font-size: 18px;
+  }
+
+  .price button {
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .heading h1 {
+    font-size: 20px;
+  }
+
+  .discount {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+
+  .product-details h3 {
+    font-size: 16px;
+  }
+
+  .rate {
+    font-size: 14px;
+  }
+
+  .price h4 {
+    font-size: 16px;
+  }
+
+  .price button {
+    padding: 5px 8px;
+    font-size: 14px;
+  }
 }

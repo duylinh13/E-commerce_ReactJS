@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -8,13 +8,25 @@ const Navbar = () => {
     setShowDropdown(!showDropdown);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(".categories")) {
+        setShowDropdown(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
       <header className="header">
         <div className="container d_flex">
           <div className="categories">
             <h4 onClick={toggleDropdown}>
-              Bạn thuộc mệnh gì<i className="fa fa-chevron-down"></i>
+              Bạn thuộc mệnh gì <i className="fa fa-chevron-down"></i>
             </h4>
             {showDropdown && (
               <div className="dropdown">

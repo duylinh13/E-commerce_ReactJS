@@ -1,13 +1,39 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Search = ({ CartItem }) => {
-  // fixed Header
-  window.addEventListener("scroll", function () {
-    const search = document.querySelector(".search");
-    search.classList.toggle("active", window.scrollY > 100);
-  });
+  useEffect(() => {
+    const handleScroll = () => {
+      const search = document.querySelector(".search");
+      search.classList.toggle("active", window.scrollY > 100);
+    };
+
+    const throttledScroll = throttle(handleScroll, 200); // Hàm throttle để giảm tải
+    window.addEventListener("scroll", throttledScroll);
+
+    return () => window.removeEventListener("scroll", throttledScroll);
+  }, []);
+
+  const throttle = (func, limit) => {
+    let lastFunc;
+    let lastRan;
+    return function () {
+      const context = this;
+      const args = arguments;
+      if (!lastRan) {
+        func.apply(context, args);
+        lastRan = Date.now();
+      } else {
+        clearTimeout(lastFunc);
+        lastFunc = setTimeout(function () {
+          if (Date.now() - lastRan >= limit) {
+            func.apply(context, args);
+            lastRan = Date.now();
+          }
+        }, limit - (Date.now() - lastRan));
+      }
+    };
+  };
 
   return (
     <>
@@ -17,9 +43,9 @@ const Search = ({ CartItem }) => {
             className="logo width"
             style={{
               fontFamily: "ThienCo",
-              color: "#1E90FF", // Màu xanh dương
-              fontSize: "27px", // Kích thước chữ to hơn
-              fontWeight: "bold", // Chữ in đậm
+              color: "#1E90FF",
+              fontSize: "27px",
+              fontWeight: "bold",
             }}
           >
             Thiên Cơ
@@ -36,7 +62,6 @@ const Search = ({ CartItem }) => {
             <div className="cart">
               <Link to="/cart">
                 <i className="fa fa-shopping-bag icon-circle"></i>
-                {/* <span>{CartItem.length === 0 ? "" : CartItem.length}</span> */}
               </Link>
             </div>
           </div>
